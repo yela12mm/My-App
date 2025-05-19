@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 
 Scaffold initial() {
@@ -66,7 +65,7 @@ Scaffold initial() {
             ),
             elevation: 20,
             shadowColor: Colors.black38,
-            padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+            padding: EdgeInsets.symmetric(horizontal: 100, vertical: 20),
           ),
           onPressed: () {},
           child: Text(
