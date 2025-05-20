@@ -5,7 +5,7 @@ Scaffold initial() {
   return Scaffold(
     backgroundColor: Color.fromARGB(255, 236, 202, 224),
     body: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      // mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Align(
           alignment: Alignment.center,
