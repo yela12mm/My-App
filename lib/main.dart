@@ -12,6 +12,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        bottomNavigationBar: BottomNavigationBar(
+          unselectedItemColor: const Color.fromARGB(255, 245, 241, 205),
+          selectedItemColor: const Color.fromARGB(255, 238, 236, 215),
+          backgroundColor: Color.fromARGB(255, 236, 202, 224),
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_2_outlined),
+
+              label: 'User',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search_outlined),
+              label: 'search',
+            ),
+          ],
+        ),
         backgroundColor: Color.fromARGB(255, 243, 241, 224),
         appBar: AppBar(
           title: Text(
@@ -23,9 +39,9 @@ class MyApp extends StatelessWidget {
                 color: Color.fromARGB(255, 246, 244, 226),
                 shadows: [
                   Shadow(
-                    offset: Offset(2.0, 2.0),
-                    blurRadius: 4.0,
-                    color: Colors.black26,
+                    offset: Offset(5.0, 5.0),
+                    blurRadius: 5.0,
+                    color: const Color.fromARGB(66, 0, 0, 0),
                   ),
                 ],
               ),
@@ -34,9 +50,10 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 236, 202, 224),
           actions: [
             IconButton(
-              iconSize: 30.0,
+              iconSize: 40.0,
               color: Color.fromARGB(255, 248, 243, 224),
               icon: Icon(Icons.notifications_outlined),
+
               onPressed: () {},
             ),
             SizedBox(width: 10),
@@ -48,32 +65,22 @@ class MyApp extends StatelessWidget {
             ),
             SizedBox(width: 10),
             IconButton(
-              iconSize: 30,
+              iconSize: 40.0,
               color: Color.fromARGB(255, 248, 243, 224),
-              icon: Icon(Icons.person_outlined),
+              icon: Icon(Icons.settings_outlined),
               onPressed: () {},
             ),
             SizedBox(width: 10),
           ],
         ),
+
         body: Stack(
           children: [
-            Opacity(
-              opacity: 0.1,
-              child: Center(
-                child: Image.network(
-                  'https://i.imgur.com/z5yImr1.png ',
-                  alignment: Alignment.center,
-                  width: 250,
-                  height: 250,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
             ListView(
               children: [
                 _buildBotonConLinea(
                   Icons.access_alarm,
+
                   "Activa tu ritmo ideal: despierta, enfoca, respira. Tu día, en equilibrio.",
                 ),
                 _buildBotonConLinea(
@@ -96,9 +103,65 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Color.fromARGB(255, 254, 248, 223),
+          onPressed: () {},
+          child: Icon(Icons.add, color: Color.fromARGB(255, 175, 116, 174)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+        ),
       ),
     );
   }
 
-  _buildBotonConLinea(IconData access_alarm, String s) {}
+  Widget _buildBotonConLinea(IconData icono, String texto) {
+    return Column(
+      children: [
+        const SizedBox(height: 10),
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Color.fromARGB(255, 246, 244, 235),
+            foregroundColor: const Color.fromARGB(255, 124, 121, 93),
+            elevation: 5,
+            padding: EdgeInsets.zero,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.zero,
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 25),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(
+                  icono,
+                  color: const Color.fromARGB(255, 224, 187, 216),
+                  size: 40,
+                ),
+                const SizedBox(width: 12),
+                Container(
+                  height: 60,
+                  width: 1,
+                  color: const Color.fromARGB(255, 172, 169, 134),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(texto, style: const TextStyle(fontSize: 14)),
+                ),
+              ],
+            ),
+          ),
+        ),
+
+        const Divider(
+          height: 1,
+          thickness: 1,
+          color: Color.fromARGB(255, 169, 167, 129),
+        ),
+      ],
+    );
+  }
 }
