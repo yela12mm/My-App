@@ -6,6 +6,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -68,82 +70,27 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-            Column(
+            ListView(
               children: [
-                GestureDetector(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(
-                        255,
-                        248,
-                        243,
-                        224,
-                      ).withOpacity(0.8),
-                      border: Border(
-                        bottom: BorderSide(
-                          color: const Color.fromARGB(255, 181, 174, 128),
-                          width: 1,
-                        ),
-                      ),
-                    ),
-                  ),
-                  onTap: () {},
+                _buildBotonConLinea(
+                  Icons.access_alarm,
+                  "Activa tu ritmo ideal: despierta, enfoca, respira. Tu día, en equilibrio.",
                 ),
-                Row(
-                  children: [
-                    Icon(Icons.alarm),
-                    SizedBox(width: 12),
-                    Container(
-                      width: 1,
-                      height: 50,
-                      color: const Color.fromARGB(255, 181, 174, 128),
-                    ),
-                    Expanded(
-                      child: Text(
-                        'Activa tu ritmo ideal: despierta, enfoca, respira. Tu día, en equilibrio',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.brown[900],
-                        ),
-                      ),
-                    ),
-                  ],
+                _buildBotonConLinea(
+                  Icons.assignment,
+                  "Empieza tu día con claridad. Organiza tus tareas, prioriza lo importante y avanza con propósito.",
                 ),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 248, 243, 224).withOpacity(0.8),
-                    border: Border(
-                      bottom: BorderSide(
-                        color: const Color.fromARGB(255, 181, 174, 128),
-                        width: 1,
-                      ),
-                    ),
-                  ),
+                _buildBotonConLinea(
+                  Icons.star_border,
+                  "Haz espacio para tus momentos favoritos. Anota, recuerda y celebra con intención.",
                 ),
-
-                Row(
-                  children: [
-                    Icon(Icons.list_alt),
-                    SizedBox(width: 12),
-                    Container(
-                      width: 1,
-                      height: 50,
-                      color: const Color.fromARGB(255, 181, 174, 128),
-                    ),
-
-                    SizedBox(width: 12),
-                    Expanded(
-                      child: Text(
-                        'Activa tu ritmo ideal: despierta, enfoca, respira. Tu día, en equilibrio',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.brown[900],
-                        ),
-                      ),
-                    ),
-                  ],
+                _buildBotonConLinea(
+                  Icons.notifications_none,
+                  "Añade tareas o eventos que quieras recordar a tiempo.",
+                ),
+                _buildBotonConLinea(
+                  Icons.water_drop_outlined,
+                  "Hidratación, descansos o autocuidado.",
                 ),
               ],
             ),
@@ -152,4 +99,6 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+
+  _buildBotonConLinea(IconData access_alarm, String s) {}
 }
