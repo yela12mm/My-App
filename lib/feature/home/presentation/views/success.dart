@@ -107,7 +107,7 @@ Scaffold success() {
 Widget _buildBotonConLinea(IconData icono, String texto) {
   return Column(
     children: [
-      const SizedBox(height: 10),
+      SizedBox(height: 10),
       ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
