@@ -40,8 +40,8 @@ Scaffold initial() {
                   color: Color.fromARGB(255, 248, 243, 224),
                   shadows: [
                     Shadow(
-                      offset: Offset(2.0, 2.0),
-                      blurRadius: 4.0,
+                      offset: Offset(1.0, 1.0),
+                      blurRadius: 1.0,
                       color: Colors.black26,
                     ),
                   ],
@@ -68,6 +68,8 @@ Scaffold initial() {
             padding: EdgeInsets.symmetric(horizontal: 100, vertical: 20),
           ),
           onPressed: () {},
+          final homeBloc = BlocProvider.of<HomeBloc>(context);
+          homeBloc.add(HomeSearchPressed());
           child: Text(
             'Star Now',
             style: GoogleFonts.nunito(
