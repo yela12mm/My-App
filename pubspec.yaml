@@ -41,8 +41,11 @@ dependencies:
   flutter_bloc: ^9.1.1
   http: ^1.4.0
   equatable: ^2.0.7
+<<<<<<< HEAD
   gif: ^2.0.0
   git: ^2.3.1
+=======
+>>>>>>> 99382c01098e9ac8b07431ab3cfb0f6ab1cb01a4
 
 
 
